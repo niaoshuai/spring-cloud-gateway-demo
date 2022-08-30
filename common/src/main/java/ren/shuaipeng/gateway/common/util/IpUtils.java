@@ -17,7 +17,9 @@ public class IpUtils {
      * @return
      */
     public static String getAddressByNginx(ServerHttpRequest request) {
-        HttpHeaders headers = request.getHeaders();
-        return headers.getFirst(NGINX_IP_HEADER);
+        // 本机测试直接可以写死
+        return "127.0.0.1";
+//        HttpHeaders headers = request.getHeaders();
+//        return headers.getFirst(NGINX_IP_HEADER);
     }
 }

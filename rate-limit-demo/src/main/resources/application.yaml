@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: acic-mis-openapi-gateway
+  jackson:
+    deserialization:
+      read-unknown-enum-values-as-null: true
+  redis:
+    host: 127.0.0.1
+  cloud:
+    gateway:
+      routes:
+        - id: baidu
+          uri: https://www.baidu.com
+          predicates:
+            - Path=/baidu
+          filters:
+            - name: RequestRateLimiter
+              args:
+                key-resolver: "#{@ipKeyResolver}"
+                redis-rate-limiter:
+                  replenishRate: 1
+                  burstCapacity: 60
+                  requestedTokens: 10

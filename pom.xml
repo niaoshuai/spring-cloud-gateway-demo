@@ -6,7 +6,9 @@
     <artifactId>spring-cloud-gateway-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
+        <module>rate-limit-demo</module>
         <module>sentinel-demo</module>
+        <module>common</module>
     </modules>
     <name>spring-cloud-gateway-demo</name>
     <description>spring-cloud-gateway-demo</description>
@@ -18,10 +20,7 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
-        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
